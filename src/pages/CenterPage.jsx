@@ -8,6 +8,11 @@ import {
   SimpleGrid,
   Text,
   GridItem,
+  Grid,
+  Divider,
+  List,
+  ListItem,
+  Spacer,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -54,36 +59,38 @@ const CenterPage = ({ data }) => {
           Search
         </Button>
       </HStack>
-      <SimpleGrid columns={2} spacing={10} overflow='scroll'>
-        <Box position='sticky' top='0.1px' bg='white'>
-          <Heading mb='1em' mt='1'>
-            User Name
-          </Heading>
-        </Box>
-        <Box position='sticky' top='0.1px' bg='white'>
-          <Heading mb='1em' mt='1'>
-            Tweets
-          </Heading>
-        </Box>
-        {/* <Box position='sticky' top='1px' bg='white'>
-          <Heading mb='1em' mt='1'>
-            Sentiment
-          </Heading>
-        </Box> */}
-
+      {/* <SimpleGrid columns={3} width='100%'>
+        <Text>User Name</Text>
+        <Spacer />
+        <Text>Tweets</Text>
+      </SimpleGrid> */}
+      <Box overflow='scroll'>
+        <HStack spacing={80}>
+          <Box position='fixed' top='8em' bg='white'>
+            <Heading>User Name</Heading>
+          </Box>
+          <Box position='fixed' top='8em' bg='white'>
+            <Heading>Tweets</Heading>
+          </Box>
+        </HStack>
         {searchedName && searchedName.length > 0 ? (
           searchedName.map((item, id) => (
-            <>
-              <Box bgColor='lightblue' h='8em'>
-                <Text>{item.user_name}</Text>
-              </Box>
-              <Box bgColor='lightblue' h='9em'>
-                <Text>{item.content}</Text>
-              </Box>
-              {/* <Box bgColor='lightblue' h='8em'>
+            <HStack key={item.id} bgColor='black' color='white' width='100%'>
+              <VStack>
+                <HStack spacing={40} p={4}>
+                  <Text>{item.user_name}</Text>
+                  <Spacer />
+                  <Text>{item.content}</Text>
+                </HStack>
+                <Box width='100%' h={"1.2em"} pl={"4em"}>
+                  <Divider />
+                </Box>
+              </VStack>
+            </HStack>
+
+            /*{ <Box bgColor='lightblue' h='8em'>
                 <Text>{item.sentiment}</Text>
-              </Box> */}
-            </>
+              </Box> }*/
           ))
         ) : (
           <Button
@@ -97,7 +104,7 @@ const CenterPage = ({ data }) => {
             Submit
           </Button>
         )}
-      </SimpleGrid>
+      </Box>
     </VStack>
   );
 };
