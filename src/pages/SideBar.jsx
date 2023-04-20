@@ -3,9 +3,15 @@ import { MdDataset, MdOutlineDisplaySettings } from "react-icons/md";
 import { IoAnalytics } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { fill } from "@cloudinary/url-gen/actions/resize";
+import { CloudinaryImage } from "@cloudinary/url-gen";
 const LeftSideBar = () => {
   const [clicked, setClicked] = useState(false);
   const navigationList = ["dataset", "analysis", "visual", "words"];
+  const gifImage = new CloudinaryImage("graph_oellzn", {
+    cloudName:
+      "https://res.cloudinary.com/dlzjopwm0/image/upload/v1682013829/graph_oellzn.gif",
+  });
 
   return (
     <VStack
@@ -67,13 +73,19 @@ const LeftSideBar = () => {
           fontSize={{ md: "1em", lg: "1.4em" }}
           p='6'
         >
-          <Image src='./src/assets/images/wordcloud.ico' boxSize='25px' />
+          <Image
+            src='https://res.cloudinary.com/dlzjopwm0/image/upload/v1682013829/wordcloud_vlmvpg.ico'
+            boxSize='25px'
+          />
 
           <Text ml='6'>Word Cloud</Text>
         </Button>
       </Link>
       <Spacer />
-      <Image src='./src/assets/images/graph.gif' boxSize='250px' />
+      <Image
+        src='https://res.cloudinary.com/dlzjopwm0/image/upload/v1682013829/graph_oellzn.gif'
+        boxSize='250px'
+      />
     </VStack>
   );
 };

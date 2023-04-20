@@ -39,7 +39,6 @@ const App = () => {
   return (
     <Flex width='100vw' backdropFilter='saturation' overflowX='hidden'>
       <LeftSideBar />
-
       {element}
     </Flex>
   );
