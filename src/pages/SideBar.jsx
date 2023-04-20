@@ -67,13 +67,13 @@ const LeftSideBar = () => {
           fontSize={{ md: "1em", lg: "1.4em" }}
           p='6'
         >
-          <Image src='./src/assets/wordcloud.ico' boxSize='25px' />
+          <Image src='./src/assets/images/wordcloud.ico' boxSize='25px' />
 
           <Text ml='6'>Word Cloud</Text>
         </Button>
       </Link>
       <Spacer />
-      <Image src='./src/assets/graph.gif' boxSize='250px' />
+      <Image src='./src/assets/images/graph.gif' boxSize='250px' />
     </VStack>
   );
 };
