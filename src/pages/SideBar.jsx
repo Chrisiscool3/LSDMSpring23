@@ -15,12 +15,10 @@ const LeftSideBar = () => {
 
   return (
     <VStack
-      width='20%'
-      height='100vh'
+      width='20vw'
+      h='100vh'
       bg='#464646'
-      position='fixed'
       borderRadius='1%'
-      m='2'
       color='whiteAlpha.800'
       pt='4em'
     >

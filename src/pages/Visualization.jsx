@@ -58,7 +58,7 @@ const data = [
 
 export const Visualization = () => {
   return (
-    <VStack w='80%' pt='2em' h='100vh' ml={"20em"} spacing='2em' mt='20em'>
+    <VStack w='80vw' pt='2em' h='100vh' ml={"2em"} spacing='2em'>
       <BarChart
         width={800}
         height={500}

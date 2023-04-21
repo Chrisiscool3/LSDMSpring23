@@ -11,6 +11,7 @@ import {
   Tbody,
   Td,
   Box,
+  Spacer,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -33,10 +34,8 @@ const Analysis = ({ data }) => {
 
   return (
     <VStack
-      w='80%'
-      pt='2em'
-      h='100vh'
-      ml={"30em"}
+      w='80vw'
+      h='full'
       spacing='2em'
       //   bgImage='url(./src/assets/gridbg.jpg)'
     >
@@ -58,8 +57,20 @@ const Analysis = ({ data }) => {
           Search
         </Button>
       </HStack>
+      <HStack width='70%' spacing={40}>
+        <Box bg='white'>
+          <Heading>User Name</Heading>
+        </Box>
+        <Spacer />
+        <Box bg='white'>
+          <Heading>Tweets</Heading>
+        </Box>
+        <Box bg='white'>
+          <Heading>Sentiment</Heading>
+        </Box>
+      </HStack>
 
-      <Box overflow={"scroll"} mt='4em'>
+      <Box overflow={"scroll"} mt='4em' width={"70%"}>
         <Table
           variant='striped'
           colorScheme='gray'
@@ -68,15 +79,9 @@ const Analysis = ({ data }) => {
         >
           <Thead>
             <Tr>
-              <Th fontSize='2xl' pos='fixed' top='6em'>
-                User Name
-              </Th>
-              <Th fontSize='2xl' pos='fixed' top='6em' left='40em'>
-                Tweets
-              </Th>
-              <Th fontSize='2xl' pos='fixed' top='6em' right='1em'>
-                Sentiment
-              </Th>
+              <Th fontSize='2xl' pos='fixed' top='6em'></Th>
+              <Th fontSize='2xl' pos='fixed' top='6em' left='40em'></Th>
+              <Th fontSize='2xl' pos='fixed' top='6em' right='1em'></Th>
             </Tr>
           </Thead>
           <Tbody>

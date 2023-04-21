@@ -1,4 +1,4 @@
-import { Flex, VStack } from "@chakra-ui/react";
+import { Container, Flex, VStack } from "@chakra-ui/react";
 import LeftSideBar from "./pages/SideBar";
 import CenterPage from "./pages/CenterPage";
 import { useRoutes } from "react-router-dom";
@@ -37,10 +37,12 @@ const App = () => {
   }, []);
 
   return (
-    <Flex width='100vw' backdropFilter='saturation' overflowX='hidden'>
-      <LeftSideBar />
-      {element}
-    </Flex>
+    <Container maxW='100vw' p={0}>
+      <Flex h={{ base: "auto", md: "100vh" }}>
+        <LeftSideBar />
+        {element}
+      </Flex>
+    </Container>
   );
 };
 

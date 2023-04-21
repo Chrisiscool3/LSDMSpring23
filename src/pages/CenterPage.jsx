@@ -36,12 +36,10 @@ const CenterPage = ({ data }) => {
 
   return (
     <VStack
-      w='80%'
-      pt='2em'
-      h='100vh'
-      ml={"25em"}
-      mr='2em'
+      w='80vw'
+      h='full'
       spacing='2em'
+
       //   bgImage='url(./src/assets/gridbg.jpg)'
     >
       <Heading size='xl'>DataSet</Heading>
@@ -60,20 +58,16 @@ const CenterPage = ({ data }) => {
           Search
         </Button>
       </HStack>
-      {/* <SimpleGrid columns={3} width='100%'>
-        <Text>User Name</Text>
+      <HStack width='70%'>
+        <Box bg='white'>
+          <Heading>User Name</Heading>
+        </Box>
         <Spacer />
-        <Text>Tweets</Text>
-      </SimpleGrid> */}
-      <Box overflow='scroll'>
-        <HStack spacing={80}>
-          <Box position='fixed' top='8em' bg='white'>
-            <Heading>User Name</Heading>
-          </Box>
-          <Box position='fixed' top='8em' bg='white'>
-            <Heading>Tweets</Heading>
-          </Box>
-        </HStack>
+        <Box bg='white'>
+          <Heading>Tweets</Heading>
+        </Box>
+      </HStack>
+      <Box overflow='scroll' width={{ sm: "80vw", md: "60vw" }}>
         {searchedName && searchedName.length > 0 ? (
           searchedName.map((item, id) => (
             <HStack key={item.id} bgColor='black' color='white' width='100%'>
@@ -88,10 +82,6 @@ const CenterPage = ({ data }) => {
                 </Box>
               </VStack>
             </HStack>
-
-            /*{ <Box bgColor='lightblue' h='8em'>
-                <Text>{item.sentiment}</Text>
-              </Box> }*/
           ))
         ) : (
           <Button
