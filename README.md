@@ -2,10 +2,10 @@
 Large Scale Data Management Spring 2023 Final Group Project
 
 Group Memebers:
-Carly Munoz
-Aylene Santillan
-Alex Van Nimwegen
-Hassan Ali
+Carly Munoz,
+Aylene Santillan,
+Alex Van Nimwegen,
+Hassan Ali,
 Chris Ayala
 
 
