@@ -22,7 +22,7 @@ const LeftSideBar = () => {
       color='whiteAlpha.800'
       pt='4em'
     >
-      <Link to='/' preventScrollReset='true'>
+      {/* <Link to='/' preventScrollReset='true'>
         <Button
           colorScheme='teal'
           width='100%'
@@ -35,8 +35,8 @@ const LeftSideBar = () => {
 
           <Text>DashBoard</Text>
         </Button>
-      </Link>
-      <Link to='/dataset' preventScrollReset='true'>
+      </Link> */}
+      <Link to='/' preventScrollReset='true'>
         <Button
           colorScheme='teal'
           width='100%'
