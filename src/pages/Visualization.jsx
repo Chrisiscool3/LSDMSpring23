@@ -5,12 +5,12 @@ import { VStack, Image, Button, HStack } from "@chakra-ui/react";
 import { useState } from "react";
 
 const imges = [
-  "../build/assets/images/count_of_tweets_by_dep_stress_score.png",
-  "../build/assets/images/count_by_stress_level.png",
-  "../build/assets/images/dist_vader_sentiment.png",
-  "../build/assets/images/distbn_dep_stress_score.png",
-  "../build/assets/images/count_by_emoji.png",
-  "../build/assets/images/scatter.png",
+  "/assets/images/count_of_tweets_by_dep_stress_score.png",
+  "/assets/images/count_by_stress_level.png",
+  "/assets/images/dist_vader_sentiment.png",
+  "/assets/images/distbn_dep_stress_score.png",
+  "/assets/images/count_by_emoji.png",
+  "/assets/images/scatter.png",
 ];
 
 export const Visualization = ({ info }) => {
