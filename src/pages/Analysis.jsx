@@ -20,9 +20,9 @@ const Analysis = ({ data }) => {
   return (
     <VStack
       w='90vw'
-      h='full'
+      h='90vh'
       spacing='2em'
-      bgImage='url(./src/assets/gridbg.jpg)'
+      // bgImage='url(./src/assets/images/gridbg.jpg)'
     >
       {componentIndex === 0 && <StressScore data={data} />}
       {componentIndex === 1 && <VaderSentiment data={data} />}
