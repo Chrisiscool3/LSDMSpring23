@@ -28,7 +28,9 @@ const StressScore = ({ data }) => {
   };
   const handleClick = async () => {
     let newData = data.filter((item) =>
-      item.user_name.toLowerCase().includes(tweets.toLowerCase())
+      item.stress_level_descriptions
+        .toLowerCase()
+        .includes(tweets.toLowerCase())
     );
     setSearchedName(newData.length < 1 ? [] : newData);
     setTweets("");
@@ -64,6 +66,9 @@ const StressScore = ({ data }) => {
         <Box bg='white'>
           <Heading fontSize={18}>Stress score</Heading>
         </Box>
+        <Box bg='white'>
+          <Heading fontSize={18}>Stress State</Heading>
+        </Box>
       </HStack>
 
       <Box overflow={"scroll"} mt='4em' width={"70%"}>
@@ -85,6 +90,7 @@ const StressScore = ({ data }) => {
                   <Td>{item.Username}</Td>
                   <Td>{item.Text}</Td>
                   <Td>{item.depression_stress_score}</Td>
+                  <Td>{item.stress_level_descriptions}</Td>
                 </Tr>
               ))
             ) : (

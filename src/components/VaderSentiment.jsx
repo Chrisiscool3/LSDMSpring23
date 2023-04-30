@@ -28,7 +28,9 @@ const VaderSentiment = ({ data }) => {
   };
   const handleClick = async () => {
     let newData = data.filter((item) =>
-      item.user_name.toLowerCase().includes(tweets.toLowerCase())
+      item.stress_level_descriptions
+        .toLowerCase()
+        .includes(tweets.toLowerCase())
     );
     setSearchedName(newData.length < 1 ? [] : newData);
     setTweets("");
@@ -64,6 +66,9 @@ const VaderSentiment = ({ data }) => {
         <Box bg='white'>
           <Heading fontSize={18}>Sentiment</Heading>
         </Box>
+        <Box bg='white'>
+          <Heading fontSize={18}>State</Heading>
+        </Box>
       </HStack>
 
       <Box overflow={"scroll"} mt='4em' width={"70%"}>
@@ -80,11 +85,12 @@ const VaderSentiment = ({ data }) => {
               searchedName.map((item, id) => (
                 <Tr
                   key={item.id}
-                  bgColor={item.vader_sentiment < 0 ? "red" : "white"}
+                  bgColor={item.depression_stress_score > 2 ? "red" : "white"}
                 >
                   <Td>{item.Username}</Td>
                   <Td>{item.Text}</Td>
                   <Td>{item.vader_sentiment}</Td>
+                  <Td>{item.stress_level_descriptions}</Td>
                 </Tr>
               ))
             ) : (

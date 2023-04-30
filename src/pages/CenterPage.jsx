@@ -23,7 +23,9 @@ const CenterPage = ({ data }) => {
   };
   const handleClick = async () => {
     let newData = data.filter((item) =>
-      item.Username.toLowerCase().includes(tweets.toLowerCase())
+      item.stress_level_descriptions
+        .toLowerCase()
+        .includes(tweets.toLowerCase())
     );
     setSearchedName(newData.length < 1 ? [] : newData);
     setTweets("");
