@@ -14,8 +14,8 @@ const App = () => {
   const [data, setData] = useState([]);
   const [info, setInfo] = useState([]);
   let element = useRoutes([
-    { path: "/", element: <DashBoard /> },
-    { path: "/dataset", element: <CenterPage data={data} /> },
+    // { path: "/", element: <DashBoard /> },
+    { path: "/", element: <CenterPage data={data} /> },
     {
       path: "/visual",
       element: <Visualization info={info} />,
