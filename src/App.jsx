@@ -8,14 +8,17 @@ import { useEffect } from "react";
 import { Visualization } from "./pages/Visualization";
 import Analysis from "./pages/Analysis";
 import WordCloud from "./pages/WordCloud";
+import DashBoard from "./pages/DashBoard";
 
 const App = () => {
   const [data, setData] = useState([]);
+  const [info, setInfo] = useState([]);
   let element = useRoutes([
-    { path: "/", element: <CenterPage data={data} /> },
+    { path: "/", element: <DashBoard /> },
+    { path: "/dataset", element: <CenterPage data={data} /> },
     {
       path: "/visual",
-      element: <Visualization />,
+      element: <Visualization info={info} />,
     },
     {
       path: "/analysis",
@@ -28,8 +31,10 @@ const App = () => {
   ]);
 
   const fetchData = async () => {
-    const res = await supabase.from("dataset").select();
+    let res = await supabase.from("dataset").select("*").limit(1000);
     setData(res.data);
+    res = await supabase.from("dataset").select("*");
+    setInfo(res.data);
   };
 
   useEffect(() => {

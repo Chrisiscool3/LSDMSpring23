@@ -5,13 +5,8 @@ import {
   HStack,
   Button,
   Box,
-  SimpleGrid,
   Text,
-  GridItem,
-  Grid,
   Divider,
-  List,
-  ListItem,
   Spacer,
 } from "@chakra-ui/react";
 
@@ -28,20 +23,14 @@ const CenterPage = ({ data }) => {
   };
   const handleClick = async () => {
     let newData = data.filter((item) =>
-      item.user_name.toLowerCase().includes(tweets.toLowerCase())
+      item.Username.toLowerCase().includes(tweets.toLowerCase())
     );
     setSearchedName(newData.length < 1 ? [] : newData);
     setTweets("");
   };
 
   return (
-    <VStack
-      w='80vw'
-      h='full'
-      spacing='2em'
-
-      //   bgImage='url(./src/assets/gridbg.jpg)'
-    >
+    <VStack w='80vw' spacing='2em'>
       <Heading size='xl'>DataSet</Heading>
       <HStack bgColor='gray.50'>
         <Input
@@ -73,9 +62,9 @@ const CenterPage = ({ data }) => {
             <HStack key={item.id} bgColor='black' color='white' width='100%'>
               <VStack>
                 <HStack spacing={40} p={4}>
-                  <Text>{item.user_name}</Text>
+                  <Text>{item.Username}</Text>
                   <Spacer />
-                  <Text>{item.content}</Text>
+                  <Text>{item.Text}</Text>
                 </HStack>
                 <Box width='100%' h={"1.2em"} pl={"4em"}>
                   <Divider />

@@ -1,5 +1,5 @@
 import { VStack, Text, Button, Image, Spacer, Icon } from "@chakra-ui/react";
-import { MdDataset, MdOutlineDisplaySettings } from "react-icons/md";
+import { MdDataset, MdHome, MdOutlineDisplaySettings } from "react-icons/md";
 import { IoAnalytics } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -23,6 +23,20 @@ const LeftSideBar = () => {
       pt='4em'
     >
       <Link to='/' preventScrollReset='true'>
+        <Button
+          colorScheme='teal'
+          width='100%'
+          fontSize={{ lg: "1.6em", sm: "1em" }}
+          p='8'
+        >
+          <Icon mr='2'>
+            <MdHome />
+          </Icon>
+
+          <Text>DashBoard</Text>
+        </Button>
+      </Link>
+      <Link to='/dataset' preventScrollReset='true'>
         <Button
           colorScheme='teal'
           width='100%'
