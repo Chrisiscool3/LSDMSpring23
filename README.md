@@ -1,7 +1,7 @@
 # LSDMSpring23
 Large Scale Data Management Spring 2023 Final Group Project
 
-Group Memebers:
+Group Members:
 Carly Munoz,
 Aylene Santillan,
 Alex Van Nimwegen,
